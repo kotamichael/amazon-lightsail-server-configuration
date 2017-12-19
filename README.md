@@ -159,6 +159,8 @@ postgres=# CREATE DATABASE catalog;
 
 ### Step 12
 
+In order to clone my remote repository I needed to install git within my instance so I ran ```$ sudo apt-get install git```
+
 ### Step 13
 
 ### Step 14
