@@ -1,4 +1,4 @@
-# Project Title
+# Configuring an Amazon Lightsail Instance to run a Flask Application and PostgreSQL Database
 
 Using a baseline installation of a Linux server and preparing it to host my web application. This includes securing it against a number of attack vectors, installing and configuring a database server and deploying a handmade web application. The steps reflect the steps recorded in the Project Details section from Udacity.
 
@@ -17,7 +17,7 @@ $ sudo apt-get update
 After it had fetched the details, I retrieved thos updates using:
 
 ```linux
-$ sude apt-get udgrade
+$ sudo apt-get udgrade
 ```
 
 ### Step 4
@@ -50,7 +50,14 @@ $ sudo ufw allow outgoing
 
 ### Step 6
 
+I created a new user named grader, then I had to edit the sudoers file in order to grant grader access to the ```sudo``` command
 
+```linux
+$ sudo adduser grader
+$ sudo nano /etc/sudoers.d/grader
+```
+ 
+then add the line ```grader ALL=(ALL:ALL) ALL``` to the file.
 
 ### Step 7
 
@@ -66,6 +73,5 @@ $ sudo ufw allow outgoing
 
 ## Acknowledgments
 
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
+* https://digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps
+* [Amazon Lightsail Documentation](https://aws.amazon.com/documentation/lightsail/)
