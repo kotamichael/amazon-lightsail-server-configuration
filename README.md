@@ -175,7 +175,6 @@ $ cd /var/www
 /var/www $ cd catalog
 /var/www/catalog $ mkdir catalog
 /var/www/catalog $ cd catalog
-/var/www/catalog/catalog
 ```
 
 Into that directory I cloned my GitHub item catalog project, renamed 'views.py' '__init__.py', changed the url inside the create_engine calls in both the 'models.py' and '__init__.py' to reflect the use of PostgreSQL: "create_engine('postgresql://catalog:catalog@localhost/catalog')". Lastly I installed psycopg2 using ```$ sudo apt-get install python-psycopg2``` and python ```$ sudo apt-get install python```
@@ -188,8 +187,44 @@ $ sudo nano __init__.py
 ```
 
 
-
 ### Step 14
+
+I then created '/etc/apache2/sites-available/catalog.conf' ```$ sudo nano /etc/apache2/sites-available/catalog.conf``` and inserted the following lines:
+
+```
+<VirtualHost *:80>
+		ServerName 18.218.28.108
+		ServerAdmin dmichael080993@gmail.com
+		WSGIScriptAlias / /var/www/catalog/catalog.wsgi
+		<Directory /var/www/catalog/catalog/>
+			Order allow,deny
+			Allow from all
+		</Directory>
+		Alias /static /var/www/catalog/catalog/static
+		<Directory /var/www/catalog/catalog/static/>
+			Order allow,deny
+			Allow from all
+		</Directory>
+		ErrorLog ${APACHE_LOG_DIR}/error.log
+		LogLevel warn
+		CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+```
+
+I then changed to the '/var/www/catalog' directory and created and edited the 'catalog.wsgi' file:
+
+```
+#!/usr/bin/python
+import sys
+import logging
+logging.basicConfig(stream=sys.stderr)
+sys.path.insert(0,"/var/www/catalog/")
+
+from catalog import app as application
+application.secret_key = 'super_secret_key'
+```
+
+Afterwards I restarted Apache ```$ sudo service apache2 restart``` and  added my path to the Google Developers console under Credentials/Authorized Javascript Origins.
 
 ## Acknowledgments
 
