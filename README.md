@@ -122,6 +122,8 @@ Once I was logged in, I completed the rest of the steps from my terminal while l
 
 ### Step 9
 
+The instance timezone was already set to UTC, but to verify I ran ```$ sudo dpkg-reconfigure tzdata```
+
 ### Step 10
 
 ### Step 11
