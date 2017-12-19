@@ -140,6 +140,23 @@ $ sudo service apache2 restart
 
 ### Step 11
 
+I installed PostgreSQL and then opened the file '/etc/postgresql/9.5/main/pg_hba.conf' to ensure that remote connections weren't allowed.
+```linux
+$ sudo apt-get install postgresql
+$ sudo nano /etc/postgresql/9.5/main/pg_hba.conf
+```
+
+I then switched to the postgres user and switched into the interactive postgres mode. Within the interactive prompt I created a new database and user both named catalog and set the password to catalog.  I then gave the catalog user permission to use the catalog database and used ctrl+z to exit the prompt.
+
+```linux
+$ sudo su - postgres
+postgres $ psql
+postgres=# CREATE DATABASE catalog;
+# CREATE USER catalog;
+# ALTER ROLE catalog WITH PASSWORD 'catalog'
+# GRANT ALL PRIVILEGES ON DATABASE catalog TO catalog;
+```
+
 ### Step 12
 
 ### Step 13
