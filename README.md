@@ -4,7 +4,7 @@ Using a baseline installation of a Linux server and preparing it to host my web 
 
 ## Getting Started (Setps 1 and 2)
 
-I began by creating a new server instance through Amazon Lightsail.  I followed the instructions to SSH into my newly created server.
+I began by creating a new server instance through Amazon Lightsail.  I followed the instructions to SSH into my newly created server.  Until specified, all the commands are issued from the browser console on the AWS site.
 
 ### Step 3
 
@@ -47,6 +47,16 @@ and
 ```linux
 $ sudo ufw allow outgoing
 ```
+
+In order to configure the UFW to allow the necessary connections, I had to run the following series of commands. They made allowances for SSH on port 2200, HTTP on port 80, and NTP on port 123.
+
+```linux
+$ sudo ufw allow 2200/tcp
+$ sudo ufw allow www
+$ sudo ufw allow ntp
+```
+
+After words, I ran ```$ sudo ufw show added``` to check the rules I'd made, followed by ```$ sudo ufw enable``` turning on the firewall, and ```$ sudo ufw status``` to check the status of the enabled firewall.
 
 ### Step 6
 
