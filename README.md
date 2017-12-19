@@ -6,6 +6,7 @@ Using a baseline installation of a Linux server and preparing it to host my web 
 
 I began by creating a new server instance through Amazon Lightsail.  I followed the instructions to SSH into my newly created server.  Until specified, all the commands are issued from the browser console on the AWS site.
 
+## Secure Your Server
 ### Step 3
 
 I first updated all my currently installed packages by running the command:
