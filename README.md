@@ -6,6 +6,12 @@ Using a baseline installation of a Linux server and preparing it to host my web 
 
 I began by creating a new server instance through Amazon Lightsail.  I followed the instructions to SSH into my newly created server.  Until specified, all the commands are issued from the browser console on the AWS site.
 
+### Basic Info
+
+IP Address: 18.218.28.108
+PORT: 2200
+SSH Key: I included the private key in the "Notes to Reviewer" section when I submitted my project.
+
 ## Secure Your Server
 ### Step 3
 
