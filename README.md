@@ -120,11 +120,23 @@ $ ssh -i grader.pem grader@18.218.28.108 -p 2200
 
 Once I was logged in, I completed the rest of the steps from my terminal while logged in to my instance as grader.
 
+I needed to disable root login and force authentication using the key pair, so in the file '/etc/ssh/sshd_config' I changed "PermitRootLogin without-password" to "PermitRootLogin no" and uncommented the line that reads "PasswordAuthentication no".  I ran ```$ sudo service ssh restart```
+
 ### Step 9
 
 The instance timezone was already set to UTC, but to verify I ran ```$ sudo dpkg-reconfigure tzdata```
 
 ### Step 10
+
+Install Apache and the libapache2-mod-wsgi, and the python set up tools packages and then restarted the Apache service.
+
+```linux
+$ sudo apt-get install apache2
+$ sudo apt-get install libapache2-mod-wsgi
+$ sudo apt-get install python-setuptools
+$ sudo service apache2 restart
+```
+
 
 ### Step 11
 
