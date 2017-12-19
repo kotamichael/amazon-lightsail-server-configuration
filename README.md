@@ -9,7 +9,9 @@ I began by creating a new server instance through Amazon Lightsail.  I followed 
 ### Basic Info
 
 IP Address: 18.218.28.108
+
 PORT: 2200
+
 SSH Key: I included the private key in the "Notes to Reviewer" section when I submitted my project.
 
 ## Secure Your Server
