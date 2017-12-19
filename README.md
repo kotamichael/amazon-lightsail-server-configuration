@@ -86,6 +86,10 @@ $ sudo nano /etc/sudoers.d/grader
 
 ### Step 12
 
+### Step 13
+
+### Step 14
+
 ## Acknowledgments
 
 * https://digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps
