@@ -59,6 +59,7 @@ $ sudo ufw allow ntp
 
 After words, I ran ```$ sudo ufw show added``` to check the rules I'd made, followed by ```$ sudo ufw enable``` turning on the firewall, and ```$ sudo ufw status``` to check the status of the enabled firewall.
 
+## Give grader user access
 ### Step 6
 
 I created a new user named grader.
@@ -123,6 +124,7 @@ Once I was logged in, I completed the rest of the steps from my terminal while l
 
 I needed to disable root login and force authentication using the key pair, so in the file '/etc/ssh/sshd_config' I changed "PermitRootLogin without-password" to "PermitRootLogin no" and uncommented the line that reads "PasswordAuthentication no".  I ran ```$ sudo service ssh restart```
 
+## Prepare to Deploy Your Project
 ### Step 9
 
 The instance timezone was already set to UTC, but to verify I ran ```$ sudo dpkg-reconfigure tzdata```
@@ -162,6 +164,7 @@ postgres=# CREATE DATABASE catalog;
 
 In order to clone my remote repository I needed to install git within my instance so I ran ```$ sudo apt-get install git```
 
+## Deploy the Item Catalog
 ### Step 13
 
 ### Step 14
