@@ -173,5 +173,5 @@ Following the guidance of the Digital Ocean article linked below (in the Acknowl
 
 ## Acknowledgments
 
-* [Digital Ocean article referenced above](https://digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps)
+* [Digital Ocean article referenced above](https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps)
 * [Amazon Lightsail Documentation](https://aws.amazon.com/documentation/lightsail/)
