@@ -167,7 +167,27 @@ In order to clone my remote repository I needed to install git within my instanc
 ## Deploy the Item Catalog
 ### Step 13
 
-Following the guidance of the Digital Ocean article linked below (in the Acknowledgements section) 
+Following the guidance of the Digital Ocean article linked below (in the Acknowledgements section) I ran ```$ sudo a2enmod wsgi``` to enable the mod_wsgi.  Then I changed into the /var/www directory, created a 'catalog' directory, changed into that directory and created yet another 'catalog' directory and changed to be inside of the nested catalog directory.
+
+```linux
+$ cd /var/www
+/var/www $ mkdir catalog
+/var/www $ cd catalog
+/var/www/catalog $ mkdir catalog
+/var/www/catalog $ cd catalog
+/var/www/catalog/catalog
+```
+
+Into that directory I cloned my GitHub item catalog project, renamed 'views.py' '__init__.py', changed the url inside the create_engine calls in both the 'models.py' and '__init__.py' to reflect the use of PostgreSQL: "create_engine('postgresql://catalog:catalog@localhost/catalog')". Lastly I installed psycopg2 using ```$ sudo apt-get install python-psycopg2``` and python ```$ sudo apt-get install python```
+
+```linux
+$ git clone https://github.com/kotamichael/catalog.git
+$ sudo mv views.py __init__.py
+$ sudo nano models.py
+$ sudo nano __init__.py
+```
+
+
 
 ### Step 14
 
