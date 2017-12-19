@@ -76,7 +76,49 @@ $ sudo nano /etc/sudoers.d/grader
 
 ### Step 8
 
+In order to log into the grader user on the server instance from the command line, it is necessary to generate a key pair either locally or through the Lighthouse terminal.  According to the Udacity specifications, I generated them locally (IN MY TERMINAL NOW) by first creating a '.ssh' directory to store the keys. I had to make my vagrant user the owner and vagrant the group in order to make the files private enough to meet the Amazon security policy. Then after changing into that newly created directory, I generated a key pair using the keygen command. These commands were issued from inside a vagrant machine on my local command line within the '/home/vagrant' directory.
 
+```linux
+/home/vagrant $ mkdir .ssh
+/home/vagrant $ chown vagrant:vagrant /home/vagrant/.ssh
+/home/vagrant $ cd .ssh
+/home/vagrant/.ssh $ ssh-keygen
+```
+
+Running the ```ssh-keygen``` command will prompt the user for a file in which to save the newly created keys.  I named the file 'grader'. This resulted in the creation of both 'grader' and 'grader.pub'. I renamed 'grader' to 'grader.pem' to remove any confusion about which file was the public and which was the private.
+
+```linux
+$ mv grader grader.pem
+``` 
+
+Then I read the contents of the 'grader.pub' file in order to copy them and then jumped back to my Lightsail instance.
+
+```linux
+$ sudo nano grader.pub
+```
+
+In my instance (accessed through the browser console) I then switched into the grader user-- ```$ sudo su - grader``` --and created a subdirectory called '.ssh' and set the owner to the grader user and set the permission to read write and execute only to the grader user.
+
+```linux
+$ mkdir .ssh
+$ chown grader:grader /home/grader/.ssh
+$ chmod 700 /home/grader/.ssh
+```
+
+I then 'cd'ed into the '.ssh' directory and created a file called 'authorized_keys', used ```sudo nano``` to edit the 'authorized_keys' file and inserted the copied 'grader.pub' contents.  I set the permissions of the file to 400.
+
+```linux
+$ sudo nano /.ssh
+$ sudo chmod 400 /.ssh/authorized_keys
+```
+
+Back in my terminal I verified that I could now log in to the instance as grader from my local machine. I had to specify the port because of my firewall and ssh configuration from earlier.
+
+```linux
+$ ssh -i grader.pem grader@18.218.28.108 -p 2200
+```
+
+Once I was logged in, I completed the rest of the steps from my terminal while logged in to my instance as grader.
 
 ### Step 9
 
