@@ -16,16 +16,16 @@ $ sudo apt-get update
 
 After it had fetched the details, I retrieved thos updates using:
 
-'''
+```linux
 $ sude apt-get udgrade
-'''
+```
 
 ### Step 4
 
 I changed the SSH port on my instance from 22 to 2200 using the 'sudo nano' command. The SSH configuration is found in /etc/ssh/sshd_config.
-'''
-sudo nano /etc/ssh/sshd_config
-'''
+```linux 
+$ sudo nano /etc/ssh/sshd_config
+```
 Inside the file I simply changed the port number to reflect the necessary change.
 
 
@@ -33,20 +33,20 @@ Inside the file I simply changed the port number to reflect the necessary change
 
 Then I began to configure my UFW. First I verified that my firewall was inactive by running:
 
-'''
+```linux
 $ sudo ufw status
-'''
+```
 Then I blocked all incoming and allowed all outgoing connections using:
 
-'''
+```linux
 $ sudo ufw default deny incoming
-'''
+```
 
 and
 
-'''
+```linux
 $ sudo ufw allow outgoing
-'''
+```
 
 ### Step 6
 
