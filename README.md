@@ -50,18 +50,23 @@ $ sudo ufw allow outgoing
 
 ### Step 6
 
-I created a new user named grader, then I had to edit the sudoers file in order to grant grader access to the ```sudo``` command
+I created a new user named grader.
 
 ```linux
 $ sudo adduser grader
-$ sudo nano /etc/sudoers.d/grader
 ```
- 
-then add the line ```grader ALL=(ALL:ALL) ALL``` to the file.
 
 ### Step 7
 
+I had to edit the sudoers file in order to grant grader access to the ```sudo``` command. Add the line ```grader ALL=(ALL:ALL) ALL``` to the file /etc/sudoers.d/grader.
+
+```linux
+$ sudo nano /etc/sudoers.d/grader
+```
+
 ### Step 8
+
+
 
 ### Step 9
 
