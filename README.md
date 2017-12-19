@@ -167,9 +167,11 @@ In order to clone my remote repository I needed to install git within my instanc
 ## Deploy the Item Catalog
 ### Step 13
 
+Following the guidance of the Digital Ocean article linked below (in the Acknowledgements section) 
+
 ### Step 14
 
 ## Acknowledgments
 
-* https://digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps
+* [Digital Ocean article referenced above](https://digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps)
 * [Amazon Lightsail Documentation](https://aws.amazon.com/documentation/lightsail/)
