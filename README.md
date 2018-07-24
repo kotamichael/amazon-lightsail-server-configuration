@@ -86,7 +86,7 @@ $ sudo nano /etc/sudoers.d/grader
 
 ### Step 8
 
-In order to log into the grader user on the server instance from the command line, it is necessary to generate a key pair either locally or through the Lighthouse terminal.  According to the Udacity specifications, I generated them locally (IN MY TERMINAL NOW) by first creating a '.ssh' directory to store the keys. I had to make my vagrant user the owner and vagrant the group in order to make the files private enough to meet the Amazon security policy. Then after changing into that newly created directory, I generated a key pair using the keygen command. These commands were issued from inside a vagrant machine on my local command line within the '/home/vagrant' directory.
+In order to log into the grader user on the server instance from the command line, it is necessary to generate a key pair either locally or through the Lightsail terminal.  According to the Udacity specifications, I generated them locally (IN MY TERMINAL NOW) by first creating a '.ssh' directory to store the keys. I had to make my vagrant user the owner and vagrant the group in order to make the files private enough to meet the Amazon security policy. Then after changing into that newly created directory, I generated a key pair using the keygen command. These commands were issued from inside a vagrant machine on my local command line within the '/home/vagrant' directory.
 
 ```linux
 /home/vagrant $ mkdir .ssh
